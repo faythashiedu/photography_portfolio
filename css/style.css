@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#logo {
+    margin: 0px 50px;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+nav button {
+    margin-left: auto;
+    height: 44.8px;
+    width: 150px;
+    display: inline;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+}
+
+nav ul li,footer ul li {
+    display: inline-block;
+    padding: 10px;
+
+}
+
+#hero {
+    height: calc(100vh - 44.8px);
+}
+
+#slider {
+    height: 50%;
+    overflow: hidden;
+}
+
+#slider img {
+    width: 100%;
+}
+
+#author {
+    height: 50%;
+    display: flex;
+}
+#author #image {
+    width: 50%;
+    background-image: url(../images/musicfox-fx-Uuk4tq5FDNI-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#author #text {
+    background-color: #0030c8;
+    color: white;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 10%;
+}
+#text #greeting {
+    position: absolute;
+    transform: rotate(-90deg);
+    left: 0;
+    top: 20%;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+#text #greeting::before {
+    content: " ";
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 2px;
+    top: 50%;
+    left: -110px;
+}
+#text h1 {
+    margin: 30px 0px;
+    font-weight: lighter;
+    font-size: 35px;
+}
+#text button {
+    padding: 20px 30px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 20px 0px;
+}
+
+#packages {
+    height: 100vh;
+}
+#packages p {
+    font-size: 30px;
+    padding: 50px 10%;
+    text-align: center;
+}
+#Gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: calc(100% - 223px);
+}
+.gallery-item {
+    background-color: black;
+    overflow: hidden;
+    transition: 0.8s ease-in-out 0.5s;
+    position: relative;
+}
+.gallery-item:not(:nth-child(2))::before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color: #0030c8;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    transform: translateY(100%);
+    transition: 0.8s ease-in-out;
+}
+.gallery-item:nth-child(6)::after {
+    content: "Book for wedding";
+    width: 100%;
+    height: 50px;
+    background-color: #0030c8;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-item:hover::before {
+    transform: translateY(-100%);
+}
+.gallery-item:nth-child(6):hover::after {
+    opacity: 1;
+}
+.gallery-item img {
+    width: 100%;
+    transition: 0.8s ease-in-out;
+    filter: blur(1px);
+}
+.gallery-item:hover > img {
+    transform: scale(1.2);
+    filter: blur(0px);
+}
